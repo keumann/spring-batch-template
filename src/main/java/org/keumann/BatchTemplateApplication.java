@@ -1,4 +1,4 @@
-package org.keumann.batch;
+package org.keumann;
 
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;

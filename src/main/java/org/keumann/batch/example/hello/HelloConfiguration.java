@@ -1,4 +1,4 @@
-package org.keumann.batch.hello;
+package org.keumann.batch.example.hello;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +27,7 @@ public class HelloConfiguration {
         return jobBuilderFactory.get("helloJob")
                 .incrementer(new RunIdIncrementer())
                 .start(this.helloStep())
+                .next(this.helloStep2())
                 .build();
     }
 
@@ -38,5 +39,16 @@ public class HelloConfiguration {
                     return RepeatStatus.FINISHED;
                 }).build();
     }
+
+
+    @Bean
+    public Step helloStep2() {
+        return stepBuilderFactory.get("helloStep2")
+                .tasklet((contribution, chunkContext) -> {
+                    log.info("hello spring batch2");
+                    return RepeatStatus.FINISHED;
+                }).build();
+    }
+
 
 }
