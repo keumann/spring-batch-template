@@ -1,4 +1,4 @@
-package org.keumann.batch.example.tasklet;
+package org.keumann.batch.base.scope;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +31,7 @@ public class JobScopeConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
+    private final SimpleJobTasklet simpleJobTasklet;
 
     @Bean
     public Job scopeJob() {
@@ -57,7 +58,8 @@ public class JobScopeConfiguration {
     @Bean
     public Step scopeStep2() {
         return stepBuilderFactory.get("scoreStep2")
-                .tasklet(scopeStep2Tasklet(null))
+                //.tasklet(scopeStep2Tasklet(null))
+                .tasklet(simpleJobTasklet)
                 .build()
                 ;
     }

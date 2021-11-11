@@ -1,4 +1,4 @@
-package org.keumann.batch.example.hello;
+package org.keumann.batch.base.hello;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

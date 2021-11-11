@@ -1,4 +1,4 @@
-package org.keumann.batch.example.flow;
+package org.keumann.batch.base.flow;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
