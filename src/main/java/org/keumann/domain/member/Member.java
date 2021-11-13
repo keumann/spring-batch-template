@@ -3,7 +3,7 @@ package org.keumann.domain.member;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import org.keumann.domain.BaseEntity;
+import org.keumann.domain.base.BaseEntity;
 import org.keumann.domain.member.constant.Role;
 import org.keumann.domain.member.dto.MemberFormDto;
 
