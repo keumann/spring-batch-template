@@ -41,7 +41,7 @@ public class ProcessorConvertJobConfiguration {
                 .build();
     }
 
-    @Bean(BEAN_PREFIX + "step")
+    @Bean(BEAN_PREFIX + "Step")
     @JobScope
     public Step step() {
         return stepBuilderFactory.get(BEAN_PREFIX + "step")
@@ -52,7 +52,7 @@ public class ProcessorConvertJobConfiguration {
                 .build();
     }
 
-    @Bean
+    @Bean(BEAN_PREFIX + "Reader")
     public JpaPagingItemReader<Teacher> reader() {
         return new JpaPagingItemReaderBuilder<Teacher>()
                 .name(BEAN_PREFIX+"reader")
@@ -62,7 +62,7 @@ public class ProcessorConvertJobConfiguration {
                 .build();
     }
 
-    @Bean
+    @Bean(BEAN_PREFIX + "Processor")
     public ItemProcessor<Teacher, String> processor() {
         return teacher -> {
 
