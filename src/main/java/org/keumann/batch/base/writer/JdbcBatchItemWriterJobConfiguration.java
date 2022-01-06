@@ -62,7 +62,8 @@ public class JdbcBatchItemWriterJobConfiguration {
     public JdbcBatchItemWriter<Pay> jdbcBatchItemWriter() { // 제네릭 타입은 Reader에서 넘겨주는 값의 타입
         return new JdbcBatchItemWriterBuilder<Pay>()
                 .dataSource(dataSource)
-                .sql("insert into pay2(amount, tx_name, tx_date_time) values (:amount, :txName, :txDateTime)")
+                .sql("insert into pay2(amount, tx_name, tx_date_time) values (:amount, :txName, :txDateTime)")  // ItemSqlParameterSourceProvider 인터페이스 구현체 사용
+                                                                                                                // 네임드 파라미터 방식
                 .beanMapped()   // Pojo 기반으로 Insert SQL의 Values를 매핑
                 .build();
     }
