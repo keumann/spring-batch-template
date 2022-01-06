@@ -18,6 +18,7 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor
 @Entity
 public class Pay {
+
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
 
     @Id
